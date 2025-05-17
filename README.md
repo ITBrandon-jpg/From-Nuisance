@@ -21,7 +21,7 @@ A distraction-free theme for [Obsidian](https://obsidian.md), designed to minimi
 5. Place the downloaded files into this folder
 6. In Obsidian, go to Settings → Appearance → Themes and select "From Nuisance"
 
-### From Obsidian Community Themes (Coming Soon)
+### From Obsidian Community Themes 
 
 1. Open Obsidian
 2. Go to Settings → Appearance → Themes
