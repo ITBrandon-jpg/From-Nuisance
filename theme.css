@@ -1,0 +1,244 @@
+/* Avoidance of Nuisance Distractions */
+/* Avoid Distractions and write some simple or complex notes */
+/* Author: @ITBranodon-JPG (Github) */
+
+:root {
+    /* Base background colors */
+
+    --background-primary: #1C1C1C;
+    --background-secondary: #1C1C1C;
+    --background-tertiary: #1C1C1C;
+
+    /* Adding sidebar-specific variables */
+
+    --sidebar-background: #f8f9fa;
+    --sidebar-border: #e9ecef;
+    --nav-item-background-hover: #f1f3f5;
+    --nav-item-color: #495057;
+    --nav-item-color-hover: #212529;
+    --nav-file-size: 14px;
+    --nav-folder-size: 15px;
+    --ribbon-background: #f1f3f5;
+    --ribbon-icon-color: #868e96;
+    --ribbon-icon-hover: #495057;
+
+    /* Base text colors */
+
+    --text-normal: ();
+    --text-muted: ();
+    --text-faint: (78, 87, 84);
+
+    /* Base accent colors */
+
+    --interactive-accent: ();
+    --interactive-accent-hover: ();
+
+    /* Base Header colors ( change () for # if you want to use hex ) */
+
+    --h1-color: #1F3438;
+    --h2-color: #1F3438;
+    --h3-color: #1F3438;
+    --h4-color: (244, 241, 236);
+    --h5-color: (244, 241, 236);
+    --h6-color: (244, 241, 236);
+
+    /* Base element styling */
+
+    theme-light {
+        background-color: var(--background-secondary);
+        color: var(--text-normal);
+    }
+    
+
+    /* Left Ribbon Menu */
+
+    .workspace-ribbon {
+        background-color: var(--ribbon-background);
+        border-right: 1px solid var(--sidebar-border);
+    }
+
+    .workspace-ribbon-collapse-btn,
+    .side-dock-ribbon-action {
+        color: var(--ribbon-icon-color);
+        transition: color 0.2s ease;
+    }
+
+    workspace-ribbon-collapse-btn:hover,
+    .side-dock-ribbon-action:hover {
+        color: var(--ribbon-icon-hover);
+    }
+
+    /* File Explorer and Navigation */
+
+    .nav-folder-title:hover {
+        color: var(--nav-item-color-hover);
+        background-color: var(--nav-item-background-hover);
+        border-radius: 4px;
+    }
+
+    .nav-folder-title {
+        font-size: var(--nav-folder-size);
+        font-weight: 600;
+        padding: 4px 8px;
+        color: var(--nav-item-color);
+        transition: color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .nav-folder-title:hover {
+        color: var(--nav-item-color-hover);
+        background-color: var(--nav-item-background-hover);
+        border-radius: 4px;
+    }
+
+    .nav-file-title {
+        font-size: var(--nav-file-size);
+        padding: 4px 8px 4px 24px;
+        color: var(--nav-item-color);
+        border-radius: 4px;
+        transition: background-color 0.1s ease;
+    }
+
+    .nav-file-title:hover {
+        background-color: var(--nav-item-background-hover);
+        color: var(--nav-item-color-hover);
+    }
+
+    /* Active File Highlighting */
+
+    .nav-file-title.is-active {
+        background-color: var(--interactive-accent);
+        color: white;
+    }
+
+    .nav-file-title.is-active:hover {
+        background-color: var(--interactive-accent-hover);
+        color: white;
+    }
+
+    /* Sidebar Container */
+
+    .workspace-leaf-content {
+        background-color: var(--sidebar-background);
+        border-right: 1px solid var(--sidebar-border);
+    }
+
+    /* Search inside the Sidebar */
+
+    .search-input-container {
+        padding: 8px;
+    }
+
+    .search-input-container input {
+        width: 100%;
+        padding: 6px 12px;
+        border: 1px solid var(--sidebar-border);
+        border-radius: 4px;
+        background-color: var(--sidebar-background);
+    }
+
+    .search-input-container input:focus {
+        border-color: var(--interactive-accent);
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+    }
+
+    /* Reisze Handles */
+
+    .workspace-leaf-resize-handle {
+        background-color: var(--sidebar-border);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    .workspace-leaf-resize-handle:hover {
+        opacity: 1;
+    }
+
+    /* Tabs in the Sidebar */
+
+    .workspace-tab-header {
+        color: var(--nav-item-color);
+        padding: 4px 12px;
+        border-radius: 4px;
+    }
+
+    .workspace-tab-header:hover {
+        background-color: var(--nav-item-background-hover);
+        color: var(--nav-item-color-hover);
+    }
+
+    .workspace-tab-header.is-active {
+        color: var(--interactive-accent);
+    }
+
+    /* Sidebar Icons Location */
+
+    .nav-file-icon,
+    .nav-folder-icon {
+        color: var(--nav-item-color);
+        opacity: 0.7;
+    }
+
+    /* Tree Lines for better visibility */
+
+    .nav-files-container {
+        padding-left: 6px;
+    }
+
+    .nav-folder-children {
+        margin-left: 6px;
+        border-left: 1px solid var(--sidebar-border);
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    /* File Tree */
+
+    .nav-folder-title.is-collapsed {
+        color: var(--nav-item-color);
+    }
+    /* Headers */
+
+    .markdown-preview-view h1 {
+        color: var(--h2-color);
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .markdown-preview-view h2 {
+        color: var(--h2-color);
+        font-size: 1.8rem;
+    }
+
+    .markdown-preview-view h3 {
+        color: var(--h3-color);
+        font-size: 1.6rem;
+    }
+    
+    /* Links */
+
+    .markdown-preview-view .internal-link {
+        color: var(--interactive-accent);
+        text-decoration: none;
+    }
+
+    .markdown-preview-view .internal-link:hover {
+        color: var(--interactive-accent-hover);
+        text-decoration: underline;
+    }
+
+    /* Code Blocks */
+
+    .markdown-preview-view code {
+        background-color: var(--background-tertiary);
+        padding: 0.2rem 0.4rem;
+        border-radius: 3px;
+        font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+    }
+
+    /* Blockquotes */
+    
+    
+
+}
+
