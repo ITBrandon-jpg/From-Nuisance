@@ -4,241 +4,588 @@
 
 :root {
     /* Base background colors */
-
-    --background-primary: #1C1C1C;
+    --background-primary: #173232 !important;
     --background-secondary: #1C1C1C;
     --background-tertiary: #1C1C1C;
 
     /* Adding sidebar-specific variables */
-
-    --sidebar-background: #f8f9fa;
-    --sidebar-border: #e9ecef;
+    --sidebar-background: black;
+    --sidebar-border: black;
     --nav-item-background-hover: #f1f3f5;
     --nav-item-color: #495057;
     --nav-item-color-hover: #212529;
     --nav-file-size: 14px;
     --nav-folder-size: 15px;
-    --ribbon-background: #f1f3f5;
-    --ribbon-icon-color: #868e96;
-    --ribbon-icon-hover: #495057;
+    --ribbon-background: #173232;
+    --ribbon-icon-color: white;
+    --ribbon-icon-hover: #173232;
 
     /* Base text colors */
-
-    --text-normal: ();
-    --text-muted: ();
-    --text-faint: (78, 87, 84);
-
+    --text-normal: #B8B799 !important;         /* Main text color - white */
+    --text-muted: #B8B799 !important;         /* Secondary text color - light gray */
+    --text-faint: #B8B799 !important;         /* Subtle text color - lighter gray */
+    --text-on-accent: #B8B799 !important;      /* Text color on accent backgrounds */
+    
     /* Base accent colors */
+    --interactive-accent: #1F3438;
+    --interactive-accent-hover: #1F3438;
 
-    --interactive-accent: ();
-    --interactive-accent-hover: ();
+    /* Base Header colors */
+    --h1-color: #B8B799 !important;
+    --h2-color: #ffffff !important;
+    --h3-color: #ffffff !important;
+    --h4-color: #ffffff !important;
+    --h5-color: #ffffff !important;
+    --h6-color: #ffffff !important;
 
-    /* Base Header colors ( change () for # if you want to use hex ) */
+    /* Underline Colors */
+    --underline-color: #1F3438;
+    --underline-hover-color: #2a4a50;
+    --underline-thickness: 3px;
 
-    --h1-color: #1F3438;
-    --h2-color: #1F3438;
-    --h3-color: #1F3438;
-    --h4-color: (244, 241, 236);
-    --h5-color: (244, 241, 236);
-    --h6-color: (244, 241, 236);
-
-    /* Base element styling */
-
-    theme-light {
-        background-color: var(--background-secondary);
-        color: var(--text-normal);
-    }
-    
-
-    /* Left Ribbon Menu */
-
-    .workspace-ribbon {
-        background-color: var(--ribbon-background);
-        border-right: 1px solid var(--sidebar-border);
-    }
-
-    .workspace-ribbon-collapse-btn,
-    .side-dock-ribbon-action {
-        color: var(--ribbon-icon-color);
-        transition: color 0.2s ease;
-    }
-
-    workspace-ribbon-collapse-btn:hover,
-    .side-dock-ribbon-action:hover {
-        color: var(--ribbon-icon-hover);
-    }
-
-    /* File Explorer and Navigation */
-
-    .nav-folder-title:hover {
-        color: var(--nav-item-color-hover);
-        background-color: var(--nav-item-background-hover);
-        border-radius: 4px;
-    }
-
-    .nav-folder-title {
-        font-size: var(--nav-folder-size);
-        font-weight: 600;
-        padding: 4px 8px;
-        color: var(--nav-item-color);
-        transition: color 0.2s ease, background-color 0.2s ease;
-    }
-
-    .nav-folder-title:hover {
-        color: var(--nav-item-color-hover);
-        background-color: var(--nav-item-background-hover);
-        border-radius: 4px;
-    }
-
-    .nav-file-title {
-        font-size: var(--nav-file-size);
-        padding: 4px 8px 4px 24px;
-        color: var(--nav-item-color);
-        border-radius: 4px;
-        transition: background-color 0.1s ease;
-    }
-
-    .nav-file-title:hover {
-        background-color: var(--nav-item-background-hover);
-        color: var(--nav-item-color-hover);
-    }
-
-    /* Active File Highlighting */
-
-    .nav-file-title.is-active {
-        background-color: var(--interactive-accent);
-        color: white;
-    }
-
-    .nav-file-title.is-active:hover {
-        background-color: var(--interactive-accent-hover);
-        color: white;
-    }
-
-    /* Sidebar Container */
-
-    .workspace-leaf-content {
-        background-color: var(--sidebar-background);
-        border-right: 1px solid var(--sidebar-border);
-    }
-
-    /* Search inside the Sidebar */
-
-    .search-input-container {
-        padding: 8px;
-    }
-
-    .search-input-container input {
-        width: 100%;
-        padding: 6px 12px;
-        border: 1px solid var(--sidebar-border);
-        border-radius: 4px;
-        background-color: var(--sidebar-background);
-    }
-
-    .search-input-container input:focus {
-        border-color: var(--interactive-accent);
-        outline: none;
-        box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
-    }
-
-    /* Reisze Handles */
-
-    .workspace-leaf-resize-handle {
-        background-color: var(--sidebar-border);
-        opacity: 0;
-        transition: opacity 0.2s ease;
-    }
-
-    .workspace-leaf-resize-handle:hover {
-        opacity: 1;
-    }
-
-    /* Tabs in the Sidebar */
-
-    .workspace-tab-header {
-        color: var(--nav-item-color);
-        padding: 4px 12px;
-        border-radius: 4px;
-    }
-
-    .workspace-tab-header:hover {
-        background-color: var(--nav-item-background-hover);
-        color: var(--nav-item-color-hover);
-    }
-
-    .workspace-tab-header.is-active {
-        color: var(--interactive-accent);
-    }
-
-    /* Sidebar Icons Location */
-
-    .nav-file-icon,
-    .nav-folder-icon {
-        color: var(--nav-item-color);
-        opacity: 0.7;
-    }
-
-    /* Tree Lines for better visibility */
-
-    .nav-files-container {
-        padding-left: 6px;
-    }
-
-    .nav-folder-children {
-        margin-left: 6px;
-        border-left: 1px solid var(--sidebar-border);
-        margin-top: 2px;
-        margin-bottom: 2px;
-    }
-
-    /* File Tree */
-
-    .nav-folder-title.is-collapsed {
-        color: var(--nav-item-color);
-    }
-    /* Headers */
-
-    .markdown-preview-view h1 {
-        color: var(--h2-color);
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .markdown-preview-view h2 {
-        color: var(--h2-color);
-        font-size: 1.8rem;
-    }
-
-    .markdown-preview-view h3 {
-        color: var(--h3-color);
-        font-size: 1.6rem;
-    }
-    
-    /* Links */
-
-    .markdown-preview-view .internal-link {
-        color: var(--interactive-accent);
-        text-decoration: none;
-    }
-
-    .markdown-preview-view .internal-link:hover {
-        color: var(--interactive-accent-hover);
-        text-decoration: underline;
-    }
-
-    /* Code Blocks */
-
-    .markdown-preview-view code {
-        background-color: var(--background-tertiary);
-        padding: 0.2rem 0.4rem;
-        border-radius: 3px;
-        font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
-    }
-
-    /* Blockquotes */
-    
-    
-
+    /* Border Colors */
+    --border-color: #0f2222 !important;            /* Darker border color to match theme */
+    --border-color-hover: #ffffff;       /* Border color on hover */
+    --border-width: 1px;                 /* Border width */
+    --divider-color: #0f2222 !important;          /* Color for divider lines */
 }
 
+/* Target both light and dark themes */
+.theme-dark,
+.theme-light {
+    --background-primary: #173232 !important;
+    --background-primary-alt: #173232 !important;
+    --background-secondary: #173232 !important;
+    --background-secondary-alt: #173232 !important;
+    
+    /* Text colors */
+    --text-normal: #B8B799 !important;
+    --text-muted: #B8B799 !important;
+    --text-faint: #B8B799 !important;
+}
+
+/* Target specific Obsidian elements */
+/* IMPORTANT: CHANGE SIDE BAR BACKGROUND COLOR HERE */
+.workspace-tabs,
+.workspace-tab-header-container,
+.workspace-split.mod-root,
+.workspace-leaf-content,
+.markdown-preview-view,
+.markdown-source-view,
+.cm-editor,
+.workspace {
+    background-color: #173232 !important;
+}
+
+/* Target the main content area */
+.markdown-preview-view,
+.markdown-source-view {
+    background: black !important;
+}
+
+/* Target the editor */
+/* IMPORTANT: CHANGE BACKGROUND COLOR OF EDITOR HERE */
+.cm-editor .cm-scroller,
+.cm-editor .cm-content,
+.cm-editor .cm-line {
+    background-color: #1F3438 !important;
+}
+
+/* Target the app container */
+.app-container,
+body {
+    background-color: #f0ebe4 !important;
+}
+
+/* Target sidebar and other UI elements */
+.side-dock-ribbon,
+.side-dock-panels,
+.workspace-ribbon,
+.workspace-tab-container,
+.workspace-split {
+    background-color: white !important;
+}
+
+/* Base Theme Styles */
+.theme-light {
+    background-color: var(--background-primary);
+    color: var(--text-normal);
+}
+
+body {
+    background-color: var(--background-primary);
+}
+
+/* Main Content Area */
+.workspace-leaf-content[data-type="markdown"] {
+    background-color: var(--background-primary);
+}
+
+.app-container {
+    background-color: var(--background-primary);
+}
+
+/* Left Ribbon Menu */
+.workspace-ribbon {
+    background-color: var(--ribbon-background);
+    border-right: var(--border-width) solid var(--border-color) !important;
+}
+
+.workspace-ribbon-collapse-btn,
+.side-dock-ribbon-action {
+    color: var(--ribbon-icon-color);
+    transition: color 0.2s ease;
+}
+
+.workspace-ribbon-collapse-btn:hover,
+.side-dock-ribbon-action:hover {
+    color: var(--ribbon-icon-hover);
+}
+
+/* File Explorer and Navigation */
+.nav-folder-title {
+    font-size: var(--nav-folder-size);
+    font-weight: 600;
+    padding: 4px 8px;
+    color: var(--text-normal);
+    transition: color 0.2s ease, background-color 0.2s ease;
+    border-radius: 4px;
+    border: var(--border-width) solid transparent;
+}
+
+.nav-folder-title:hover {
+    color: var(--text-normal);
+    background-color: var(--nav-item-background-hover);
+    border-color: var(--border-color-hover) !important;
+}
+
+.nav-file-title {
+    font-size: var(--nav-file-size);
+    padding: 4px 8px 4px 24px;
+    color: var(--text-normal);
+    border-radius: 4px;
+    border: var(--border-width) solid transparent;
+    transition: background-color 0.1s ease;
+}
+
+.nav-file-title:hover {
+    background-color: var(--nav-item-background-hover);
+    color: var(--text-normal);
+    border-color: var(--border-color-hover) !important;
+}
+
+/* Active File Highlighting */
+.nav-file-title.is-active {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+    border: var(--border-width) solid var(--border-color) !important;
+}
+
+.nav-file-title.is-active:hover {
+    background-color: var(--interactive-accent-hover);
+    color: var(--text-on-accent);
+}
+
+/* Headers */
+.markdown-preview-view h1 {
+    color: var(--h1-color);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.markdown-preview-view h2 {
+    color: var(--h2-color);
+    font-size: 1.8rem;
+}
+
+.markdown-preview-view h3 {
+    color: var(--h3-color);
+    font-size: 1.6rem;
+}
+
+/* Links */
+.markdown-preview-view .internal-link {
+    color: var(--interactive-accent);
+    text-decoration: none;
+}
+
+.markdown-preview-view .internal-link:hover {
+    color: var(--interactive-accent-hover);
+    text-decoration: underline;
+}
+
+/* Code Blocks */
+.markdown-preview-view code {
+    background-color: var(--background-tertiary);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'Times New Roman', 'Monaco', 'Courier New', monospace;
+    border: var(--border-width) solid var(--border-color) !important;
+}
+
+/* Add these new styles after your :root section */
+
+/* Force background color on main elements */
+.theme-light .workspace-tab-container,
+.theme-light .workspace-split.mod-root,
+.theme-light .workspace-split.mod-horizontal,
+.theme-light .workspace-split.mod-vertical,
+.theme-light .workspace-leaf-content,
+.theme-light .view-content {
+    background-color: var(--background-primary);
+}
+
+/* Main content area */
+.markdown-source-view.mod-cm6 .cm-scroller,
+.markdown-preview-view {
+    background-color: var(--background-primary);
+}
+
+/* Editor background */
+.cm-editor {
+    background-color: var(--background-primary);
+    border: var(--border-width) solid var(--border-color) !important;
+}
+
+/* Main app container */
+.app-container {
+    background-color: var(--background-primary) !important;
+}
+
+/* Workspace root */
+.workspace {
+    background-color: var(--background-primary);
+}
+
+/* Main content area */
+.workspace-split.mod-root {
+    background-color: var(--background-primary);
+}
+
+/* Override any other background colors */
+.theme-light {
+    background-color: var(--background-primary) !important;
+}
+
+/* IMPORTANT: CHANGE BACKGROUND COLOR HERE */
+
+body.theme-light,
+body.theme-dark {
+    --background-primary: #142d2d !important;          /* Soft beige background */
+    --background-secondary: #f0ebe4 !important;        /* Slightly darker beige sidebar */
+    background-color: #0f2222 !important;
+}
+
+/* Sidebar specific colors */
+.workspace-ribbon,
+.workspace-tab-container,
+.workspace-tab-header-container,
+.side-dock-ribbon,
+.side-dock-panels {
+    background-color: #0f2222 !important;
+}
+
+/* Ensure text colors are applied */
+.markdown-preview-view,
+.markdown-source-view,
+.cm-editor {
+    color: var(--text-normal) !important;
+}
+
+/* Style different text elements */
+.nav-file-title,
+.nav-folder-title {
+    color: var(--text-normal) !important;
+}
+
+.nav-file-title-content:hover,
+.nav-folder-title:hover {
+    color: var(--text-normal) !important;
+}
+
+/* Style sidebar text */
+.workspace-tab-header-inner,
+.workspace-tab-header-inner-title {
+    color: var(--text-normal) !important;
+}
+
+/* Style editor text */
+.cm-line {
+    color: var(--text-normal) !important;
+}
+
+/* Style muted text */
+.nav-file-title-content {
+    color: var(--text-muted) !important;
+}
+
+/* Style faint text */
+.workspace-leaf-content[data-type="search"] .search-result-file-matches {
+    color: var(--text-faint) !important;
+}
+
+/* Make sure the editor text is white */
+
+/* IMPORTANT: CHANGE COLOR OF EDITOR TEXT HERE */
+.cm-editor .cm-line {
+    color:  #B8B799 !important;
+}
+
+/* Make sidebar text white */
+.nav-file-title,
+.nav-folder-title,
+.nav-file-title-content,
+.workspace-tab-header-inner,
+.workspace-tab-header-inner-title {
+    color: black !important;
+}
+
+/* Add these styles to control borders throughout the app */
+
+/* Tab borders */
+.workspace-tab-header-container {
+    border-bottom: var(--border-width) solid var(--border-color) !important;
+}
+
+/* Split pane borders */
+.workspace-split {
+    border-color: var(--border-color) !important;
+}
+
+/* Resize handle borders */
+.workspace-leaf-resize-handle {
+    background-color: var(--border-color) !important;
+}
+
+/* File explorer item borders */
+.nav-file-title,
+.nav-folder-title {
+    border-radius: 4px;
+    border: var(--border-width) solid transparent;
+}
+
+.nav-file-title:hover,
+.nav-folder-title:hover {
+    border-color: var(--border-color-hover) !important;
+}
+
+/* Active file border */
+.nav-file-title.is-active {
+    border: var(--border-width) solid var(--border-color) !important;
+}
+
+/* Code block borders */
+.markdown-preview-view code {
+    border: var(--border-width) solid var(--border-color) !important;
+}
+
+/* Editor borders */
+.cm-editor {
+    border: var(--border-width) solid var(--border-color) !important;
+}
+
+/* Add these new styles for divider lines */
+/* Fix tab container dividers */
+.workspace-tab-header-container,
+.workspace-tab-header,
+.workspace-tab-container-before,
+.workspace-tab-container-after {
+    border: none !important;
+    border-bottom: none !important;
+}
+
+/* Fix resize handles */
+.workspace-leaf-resize-handle {
+    background-color: #0f2222 !important;
+    opacity: 0.2;
+}
+
+/* Fix split pane borders */
+.workspace-split {
+    border: none !important;
+}
+
+.workspace-split.mod-vertical > * {
+    border-right: 1px solid #0f2222 !important;
+}
+
+.workspace-split.mod-horizontal > * {
+    border-bottom: 1px solid #0f2222 !important;
+}
+
+/* Fix sidebar borders */
+.workspace-ribbon {
+    border-right: 1px solid #0f2222 !important;
+}
+
+/* Fix tab header borders */
+.workspace-tab-header {
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+/* Fix any remaining divider lines */
+.workspace-leaf,
+.workspace-tabs {
+    border: none !important;
+}
+
+/* Remove all default borders and add our custom ones */
+.workspace-split,
+.workspace-tabs,
+.workspace-tab-container,
+.workspace-tab-header-container,
+.workspace-ribbon,
+.workspace-leaf,
+.mod-root,
+.mod-vertical,
+.mod-horizontal,
+.view-header,
+.status-bar {
+    border: none !important;
+    border-right: none !important;
+    border-left: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+/* Custom divider styling */
+.workspace-leaf-resize-handle {
+    background-color: #173232 !important;
+    opacity: 0.2;
+}
+
+/* Remove white borders from tabs */
+.workspace-tab-header-container {
+    border: none !important;
+    background-color: #0f2222 !important;
+}
+
+/* Remove borders from split views */
+.workspace-split.mod-vertical > * {
+    border: none !important;
+}
+
+.workspace-split.mod-horizontal > * {
+    border: none !important;
+}
+
+/* Remove any remaining borders */
+.workspace-leaf-resize-handle,
+.workspace-tab-header-inner,
+.workspace-tab-header-inner-icon,
+.workspace-tab-header-inner-title {
+    border: none !important;
+    border-right: none !important;
+    border-left: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+/* Status bar cleanup */
+.status-bar {
+    border-top: none !important;
+    background-color: #0f2222 !important;
+}
+
+/* Fix tab dividers */
+.workspace-tab-header-container,
+.workspace-tab-header,
+.workspace-tab-container,
+.workspace-tab-header-inner,
+.workspace-tab-header-inner-icon,
+.workspace-tab-header-inner-title,
+.workspace-tab-header.is-active,
+.workspace-tab-header.is-active .workspace-tab-header-inner,
+.workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.workspace-tab-header.is-active .workspace-tab-header-inner-title {
+    border: none !important;
+    border-right: none !important;
+    border-left: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove tab separator lines */
+.workspace-tab-header::after,
+.workspace-tab-header::before,
+.workspace-tab-container::after,
+.workspace-tab-container::before {
+    display: none !important;
+    border: none !important;
+    background: none !important;
+}
+
+/* Remove any dividers between tabs */
+.workspace-tab-header + .workspace-tab-header {
+    border-left: none !important;
+}
+
+/* Remove tab container bottom border */
+.workspace-tab-container {
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+/* Round tab buttons - top corners only */
+.workspace-tab-header {
+    border-radius: 8px 8px 0 0 !important;
+    margin: 4px 4px 0 4px !important;
+    padding: 6px 16px !important;
+    transition: background-color 0.2s ease !important;
+    height: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;    /* Align content to start */
+}
+
+/* Tab inner content styling */
+.workspace-tab-header-inner {
+    display: inline-flex !important;           /* Change to inline-flex */
+    align-items: center !important;
+    gap: 6px !important;                       /* Increased gap between icon and text */
+    height: 100% !important;
+}
+
+/* Tab text styling */
+.workspace-tab-header-inner-title {
+    font-size: 14px !important;
+    line-height: 1 !important;
+    margin-top: 1px !important;                /* Slight adjustment to align with icon */
+}
+
+/* Tab icon styling */
+.workspace-tab-header-inner-icon {
+    display: inline-flex !important;           /* Change to inline-flex */
+    align-items: center !important;
+    justify-content: center !important;
+    width: 16px !important;                    /* Fixed width */
+    height: 16px !important;                   /* Fixed height */
+    font-size: 16px !important;
+    margin: 0 !important;                      /* Remove any margins */
+}
+
+/* Icon container */
+.workspace-tab-header-inner-icon svg {
+    width: 16px !important;                    /* Fixed width for SVG */
+    height: 16px !important;                   /* Fixed height for SVG */
+}
+
+/* Active tab styling */
+.workspace-tab-header.is-active {
+    background-color: #173232 !important;
+    border-radius: 8px 8px 0 0 !important;  /* Match the top radius */
+}
+
+/* Tab container spacing */
+.workspace-tab-header-container {
+    padding: 4px 4px 0 4px !important;      /* Remove bottom padding */
+    gap: 1px !important;
+}
+
+/* Hover effect for tabs */
+.workspace-tab-header:hover {
+    background-color: #173232 !important;
+    border-radius: 8px 8px 0 0 !important;  /* Match the top radius */
+}
